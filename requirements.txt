@@ -2,3 +2,6 @@ langchain
 langchain-openai
 langchain-chroma
 python-dotenv
+pypdf
+faiss-cpu
+faiss-gpu
