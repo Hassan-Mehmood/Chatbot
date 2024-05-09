@@ -1,4 +1,4 @@
-from Chatbot import ChatSystem
+from ChatSystem import ChatSystem
 from ChatInterface import ChatInterface
 
 chat = ChatSystem()
