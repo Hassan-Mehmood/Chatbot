@@ -1,9 +1,7 @@
-import dotenv
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain.memory import ChatMessageHistory
 
-dotenv.load_dotenv()
 
 class ChatSystem:
     def __init__(self, model="gpt-3.5-turbo-1106", temperature=0.2):

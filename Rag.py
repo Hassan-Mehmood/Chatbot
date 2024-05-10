@@ -1,11 +1,8 @@
-import dotenv
 from langchain_openai import ChatOpenAI
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain_openai import OpenAIEmbeddings
-
-dotenv.load_dotenv()
 
 class Rag:
 	def __init__(self):
@@ -23,7 +20,7 @@ class Rag:
 		return pages
 
 	def create_embeddings(self):
-		embeddings = OpenAIEmbeddings()
+		embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
 		return embeddings
 	
 	def create_vectorstore(self, pages, embeddings):
