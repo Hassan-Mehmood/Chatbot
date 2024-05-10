@@ -11,6 +11,8 @@ dotenv.load_dotenv()
 
 rag = Rag()
 
+print('Welcome to the Langchain-Rag demo!')
+
 print('Loading documents...')
 pages = rag.load_and_split_document("data/ml_book.pdf")
 print('Creating embeddings...')
