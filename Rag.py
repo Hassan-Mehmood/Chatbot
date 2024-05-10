@@ -19,6 +19,7 @@ Answer the question only on the above context. {question}
 '''
 		
 		self.prompt_template = ChatPromptTemplate.from_messages([
+			("system", "You will answer questions based on the context. And you will never answer any question without knowing the context. If you don't know the answer you will simply say that I don't know"),
 			("human", self.prompt),
 			])
 		self.llm = ChatOpenAI(model="gpt-3.5-turbo-0125")
