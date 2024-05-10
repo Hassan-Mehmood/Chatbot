@@ -11,11 +11,11 @@ dotenv.load_dotenv()
 
 rag = Rag()
 
-pages = rag.load_and_split_document("data/cpp_book.pdf")
+pages = rag.load_and_split_document("data/ml_book.pdf")
 embeddings = rag.create_embeddings()
 vectorstore = rag.create_vectorstore(pages, embeddings)
 
-docs = vectorstore.similarity_search("What is a pointer", k=1)
+docs = vectorstore.similarity_search("What is regression analysis", k=1)
 print(f'DOCS: {docs} \n\n')
 for doc in docs:
-    print(f'Document page content: {doc.page_content}')
+    print(f'Document page content: {doc.page_content}\n\n')
