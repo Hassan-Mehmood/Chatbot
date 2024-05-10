@@ -11,11 +11,12 @@ dotenv.load_dotenv()
 
 rag = Rag()
 
+print('Loading documents...')
 pages = rag.load_and_split_document("data/ml_book.pdf")
+print('Creating embeddings...')
 embeddings = rag.create_embeddings()
+print('Creating vector store...')
 vectorstore = rag.create_vectorstore(pages, embeddings)
 
-docs = vectorstore.similarity_search("What is regression analysis", k=1)
-print(f'DOCS: {docs} \n\n')
-for doc in docs:
-    print(f'Document page content: {doc.page_content}\n\n')
+rag.chat(vectorstore)
+

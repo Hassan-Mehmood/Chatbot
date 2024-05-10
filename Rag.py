@@ -27,4 +27,20 @@ class Rag:
 		vectorstore = FAISS.from_documents(pages, embeddings)
 		return vectorstore
 	
+	def chat(self, vectorstore):
+		while True:
+			query = input("User: ")
+			if query.lower() == 'q' or query.lower() == 'quit':
+				break
+			response = vectorstore.similarity_search(query, k=1)
+
+			print(f'''AI: {response[0].page_content}
+
+Press 'q' or 'quit' to quit''')
+		print('Goodbye!')
+
+		
+		
+
+
 	
